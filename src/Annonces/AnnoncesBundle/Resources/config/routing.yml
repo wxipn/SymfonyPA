@@ -1,0 +1,27 @@
+annonces_homepage:
+    path:     /
+    defaults: { _controller: AnnoncesBundle:Annonces:index }
+
+annonces_liste:
+    path:     /annonce-liste
+    defaults: { _controller: AnnoncesBundle:Annonces:annonceListe }
+
+annonces_unite:
+    path:     /annonce/{id}
+    defaults: { _controller: AnnoncesBundle:Annonces:annonce }
+
+annonces_contact:
+    path:     /annonce-contacter
+    defaults: { _controller: AnnoncesBundle:Annonces:contact }
+    
+categorieAnnonces:
+    path:  /categorie/{categorie}
+    defaults: { _controller: AnnoncesBundle:Annonces:categorie }
+    
+publication_annonce:
+    path: /annonce-publier
+    defaults: { _controller: AnnoncesBundle:Publication:publicationFormulaire }
+
+plan_page:
+    path: /plan
+    defaults: { _controller: AnnoncesBundle:Plan:index }

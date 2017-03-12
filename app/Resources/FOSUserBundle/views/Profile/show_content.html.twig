@@ -1,0 +1,12 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<!-- Heading Row -->
+<div class="row">
+    {% include 'UtilisateursBundle:Default:ModulesUsed/menu_utilisateur.html.twig' %}
+    <!-- /.col-md-9 -->
+    <div class="col-md-6">
+        <p>{{ 'profile.show.username'|trans }}: {{ user.username }}</p>
+        <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
+    </div>
+</div>
+<!-- /.row -->

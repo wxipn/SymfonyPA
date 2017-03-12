@@ -1,0 +1,57 @@
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="http://placehold.it/150x30&text=Logo" class="img-responsive" alt="">
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="{{ path('annonces_homepage') }}">index</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('annonces_liste') }}">Annonce liste</a>
+                    </li>
+                     <li>
+                        <a href="{{ path('plan_page') }}">Plan</a>
+                    </li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    {% if is_granted('ROLE_USER')== false %}
+                    <li><a href="{{ path('fos_user_security_login') }}">Connexion</a></li>
+                    <li><a href="{{ path('fos_user_registration_register') }}">Inscription</a></li>
+                    {% endif %}
+                    <li class="dropdown">
+                        {% if is_granted('ROLE_USER') %}
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle" aria-expanded="false">
+                            <i class="fa fa-user fa-fw"></i> Mon compte <i class="fa fa-caret-down"></i>
+                        </a>
+                        {% endif %}
+                        <ul class="dropdown-menu dropdown-user">
+                            <li><a href="{{ path('fos_user_profile_show') }}"><i class="fa fa-user fa-fw"></i> Tableau de bord</a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-gear fa-fw"></i> Messages</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li><a href="{{ path('fos_user_security_logout') }}"><i class="fa fa-sign-out fa-fw"></i> Déconnexion</a>
+                            </li>
+                        </ul>
+                        <!-- /.dropdown-user -->
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>

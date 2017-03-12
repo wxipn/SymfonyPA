@@ -1,0 +1,39 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+    <!-- Heading Row -->
+    <div class="row">
+        <div class="col-md-3">
+            <img alt="" class="img-responsive" src="http://placehold.it/250x250&amp;text=Annonce">
+        </div>
+        <!-- /.col-md-9 -->
+        <div class="col-md-6">
+            <h1>{{ annonce.titre }}</h1>
+            <h2><small>{{ annonce.categorie.nom }}</small></h2>
+        </div>
+
+        <div class="col-md-3">
+            <a class="btn btn-primary btn-lg btn-block" href="{{ path('annonces_contact')}}">Contacter</a>
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <hr>
+    <div class="row">
+        <div class="col-md-9">
+            <div class="col-md-12">                
+                <h2>Description</h2>
+                <p>{{ annonce.description }}</p>
+            </div>
+        </div><!-- /.col-md-9 -->
+        
+            <div class="col-md-3">
+                
+                <div class="row">
+                    {% include '::modulesUsed/naviguation.html.twig' %}
+                </div>
+                
+            </div>
+    </div>
+    <br><br>
+{% endblock %}

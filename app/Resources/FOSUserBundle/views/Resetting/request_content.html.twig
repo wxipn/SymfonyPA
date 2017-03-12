@@ -1,0 +1,25 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<!-- Heading Row -->
+<div class="row">
+    <div class="col-md-6 col-md-offset-3 well">              
+        <form action="{{ path('fos_user_resetting_send_email') }}" method="POST" class="fos_user_resetting_request">
+            <fieldset>
+                <div class="form-group">
+                    <label for="username" class="col-md-12">{{ 'resetting.request.username'|trans }}</label>
+                    <div class="col-md-12">
+                        <input class="form-control" type="text" id="username" name="username" required="required" placeholder="Pseudo"/>
+                    </div>
+                </div>
+
+                <br/><br/><br/>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <button type="submit" class="btn btn-block btn-primary" value="{{ 'resetting.request.submit'|trans }}">Réinitialiser mon mot de passe</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+<!-- /.row -->

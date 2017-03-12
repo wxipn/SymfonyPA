@@ -1,0 +1,56 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+    <div class="row">
+        {% for flashMessage in app.session.flashbag.get('notice') %}
+            <div class="flash-notice">
+                {{ flashMessage }}
+            </div>
+        {% endfor %}
+        <div class="col-md-9">
+
+            <h2>Publier une annonce</h2>
+            <p>This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!<br><br></p>
+
+            <div class="well">
+                {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+                <fieldset>
+                    <legend>Déposer une annonce</legend>
+                    <div class="form-group">
+                        {{ form_label(form.categorie) }}
+                        <div class="col-md-8">
+                            {{ form_widget(form.categorie, {'attr': {'class': 'form-control'}})}}
+                        </div>
+                    </div>
+                    <div class="form-group">   
+                        {{ form_label(form.titre) }}
+                        <div class="col-md-8">
+                            {{ form_widget(form.titre, {'attr': {'class': 'form-control'}})}}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(form.Description) }}
+                        <div class="col-md-8">
+                            {{ form_widget(form.Description, {'attr': {'class': 'form-control'}})}}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-8 col-md-offset-4">
+                            {{ form_widget(form.envoyer, {'attr': {'class': 'btn btn-primary'}})}}
+                        </div>
+                    </div>
+                </fieldset>
+                {{ form_end(form) }}
+            </div>
+        </div><!-- /.col-md-9 -->
+
+        <div class="col-md-3">
+
+            <div class="row">
+                {% include '::modulesUsed/naviguation.html.twig' %}
+            </div>
+
+        </div>
+    </div> <!-- /.container -->
+    <br><br>
+{% endblock %}

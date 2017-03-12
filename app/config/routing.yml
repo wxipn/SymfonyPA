@@ -1,0 +1,7 @@
+utilisateurs:
+    resource: "@UtilisateursBundle/Resources/config/routing.yml"
+    prefix:   /
+
+annonces:
+    resource: "@AnnoncesBundle/Resources/config/routing.yml"
+    prefix:   /

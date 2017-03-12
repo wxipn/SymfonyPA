@@ -1,0 +1,50 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<!-- Heading Row -->
+<div class="row">
+{% include 'UtilisateursBundle:Default:ModulesUsed/menu_utilisateur.html.twig' %}
+    <!-- /.col-md-9 -->
+    <div class="col-md-9">
+        <div class="well">
+            {{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit' } }) }}
+            <fieldset>
+                <legend>Identité</legend>
+                <div class="form-group">
+                    <div class="col-md-4">
+                        {{ form_label(form.username) }}
+                    </div>
+                    <div class="col-md-8">
+                        {{ form_widget(form.username, {'attr': {'class': 'form-control'}}) }}
+                    </div>
+                </div>
+                    <br /><br />
+                <div class="form-group">
+                    <div class="col-md-4">
+                        {{ form_label(form.email) }}
+                    </div>
+                    <div class="col-md-8">
+                        {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
+                    </div>
+                </div>
+                    <br /><br />
+                <div class="form-group">
+                    <div class="col-md-4">
+                        {{ form_label(form.current_password) }}
+                    </div>
+                    <div class="col-md-8">
+                        {{ form_widget(form.current_password, {'attr': {'class': 'form-control'}}) }}
+                        <span class="form_error_field">{{ form_errors(form.current_password) }}</span>
+                    </div>
+                </div>
+                    <br /><br />
+                <div class="form-group">
+                    <div class="col-md-8 col-md-offset-4">
+                        <button type="submit" class="btn btn-primary" value="{{ 'profile.edit.submit'|trans }}">Mettre à jour</button>
+                    </div>
+                </div>
+            </fieldset>
+            {{ form_end(form) }}
+        </div>
+    </div>
+</div>
+<!-- /.row -->
